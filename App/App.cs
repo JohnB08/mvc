@@ -5,11 +5,14 @@ namespace mvc.App;
 
 public class LaPizzeriaApp(MenyController menyController, CustomerController customerController)
 {
+    /* Appen må ha en referanse til hver av controllerene den skal styre. */
     private readonly MenyController _menyController = menyController;
     private readonly CustomerController _customerController = customerController;
 
+    /* Den har et eget felt som ser om appen skal kjøre */
     private bool isRunning = true;
 
+    /* Her er metoden som kjører vår app. */
     public void Run()
     {
         while (isRunning)
@@ -21,6 +24,7 @@ public class LaPizzeriaApp(MenyController menyController, CustomerController cus
             Console.WriteLine("press 3 to see the available meny");
             Console.WriteLine("press 4 to check availability of an item");
             Console.WriteLine("press 5 to exit.");
+            /* Her tar appen imot brukerinput, og sier til kontrolleren vår hva som skal kjøres. */
             var input = Console.ReadLine();
             switch (input)
             {

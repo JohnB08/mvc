@@ -6,6 +6,7 @@ namespace mvc.Controllers;
 
 public class CustomerController(Customers customers, RenderCustomers view)
 {
+    /* Denne controlleren skal styre hvordan vår app skal interacte med vår customer modell. */
     private readonly List<string> _customers = customers.GetCustomers();
     private readonly RenderCustomers _view = view;
     public void AddCustomer()
